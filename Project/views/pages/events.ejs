@@ -1,2 +1,43 @@
-<h1>Upcoming Events</h1>
-<p>Check out what's happening soon!</p>
+<head>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events | Community Portal</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Community Events</h1>
+  </header>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/events">Events</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
+  <main>
+    <h2>Upcoming Events</h2>
+
+    <div class="events-container">
+      <% events.forEach(event => { %>
+        <div class="event-card">
+          <img src="<%= event.image %>" alt="Event Image" />
+          <h3><%= event.title %></h3>
+          <p><strong>Date:</strong> <%= event.date %></p>
+          <p><strong>Location:</strong> <%= event.location %></p>
+        </div>
+      <% }) %>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Community Portal
+  </footer>
+</body>
+</html>
+
+</head>

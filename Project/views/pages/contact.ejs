@@ -1,7 +1,45 @@
-<h1>Contact Us</h1>
-<form method="POST" action="/contact">
-  <input type="text" name="name" placeholder="Your Name" required /><br />
-  <input type="email" name="email" placeholder="Your Email" required /><br />
-  <textarea name="message" placeholder="Your Message" required></textarea><br />
-  <button type="submit">Send</button>
-</form>
+<head>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Community Portal</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/events">Events</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
+  <main>
+    <h2>We’d love to hear from you!</h2>
+
+    <form action="/contact" method="POST" class="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2025 Community Portal
+  </footer>
+</body>
+</html>
+
+</head>
