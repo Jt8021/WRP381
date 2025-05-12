@@ -1,5 +1,4 @@
-<head>
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,7 +6,7 @@
   <title>Community Portal | Home</title>
   <link rel="stylesheet" href="/css/style.css" />
 </head>
-<body>
+<body class="home-page">
   <header>
     <h1>Welcome to the Community Portal</h1>
   </header>
@@ -20,25 +19,91 @@
   </nav>
 
   <main>
-    <h2>Upcoming Events</h2>
-    <section class="intro">
-  <h2>This is the homepage</h2>
-  <p>Enjoy your stay and <a href="/about">meet our team</a> to learn more about the people behind the portal.</p>
-</section>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to the Community Portal</h1>
+        <p>Connecting people for better collaboration and growth</p>
+        <a href="/events" class="cta-button">Join Our Upcoming Events</a>
+      </div>
+    </section>
 
-    <div class="event-placeholder">
-      <p>No events yet! Check back soon or head to the <a href="/events">Events</a> page.</p>
-    </div>
+    <!-- Countdown Section -->
+    <section class="countdown">
+      <h2>Next Event Countdown</h2>
+      <div id="countdown-timer"></div>
+    </section>
 
-    <section class="intro">
-      <h2>This is the homepage</h2>
-      <p>Enjoy your stay and explore our portal for exciting updates.</p>
+    <!-- Featured Section -->
+    <section class="featured">
+      <div class="featured-item">
+        <h3>Upcoming Events</h3>
+        <p>Explore the upcoming events in our community!</p>
+        <a href="/events" class="cta-button">See More</a>
+      </div>
+      <div class="featured-item">
+        <h3>Meet Our Team</h3>
+        <p>Get to know the team behind this portal.</p>
+        <a href="/about" class="cta-button">Learn More</a>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <h2>User Testimonials</h2>
+      <div class="testimonial">
+        <p>"This portal has helped me connect with so many amazing people and events. A must-join!"</p>
+        <p>- Alex Doe</p>
+      </div>
+      <div class="testimonial">
+        <p>"I love the community vibes here. It's the best place to find exciting events."</p>
+        <p>- Jane Smith</p>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog">
+      <h2>Latest News</h2>
+      <div class="blog-post">
+        <h3><a href="#">New Feature Release: Event RSVP</a></h3>
+        <p>Check out our new feature that allows you to RSVP for upcoming events directly on the portal...</p>
+      </div>
+    </section>
+
+    <!-- Social Links Section -->
+    <section class="social-links">
+      <a href="https://facebook.com" target="_blank" class="social-icon">Facebook</a>
+      <a href="https://twitter.com" target="_blank" class="social-icon">Twitter</a>
+      <a href="https://instagram.com" target="_blank" class="social-icon">Instagram</a>
     </section>
   </main>
 
   <footer>
     &copy; 2025 Community Portal
   </footer>
+
+  <!-- Countdown Timer Script -->
+  <script>
+    // Set up the countdown timer
+    const countdownDate = new Date("2025-06-01T00:00:00").getTime();
+
+    const x = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown-timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown-timer").innerHTML = "Event Started!";
+      }
+    }, 1000);
+  </script>
+
 </body>
 </html>
-</head>
