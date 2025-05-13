@@ -1,5 +1,16 @@
-const express = require('express');
-const router = express.Router();
+const events = require('../Data/Events');
+const team = require('../data/team');
+const submissions = require('../data/contactSubmissions');
+ 
+router.get('/events', (req, res) => {
+    res.render('events', { events });
+});
+router.get('/team', (req, res) => {
+    res.render('team', { team });
+});
+router.get('/submissions', (req, res) => {
+    res.render('submissions', { submissions });
+});
 
 // In-memory data storage
 const messages = [];
