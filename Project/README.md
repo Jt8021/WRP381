@@ -65,3 +65,14 @@ To get this Community Portal project running on your local machine, follow these
 
 7.  **Add your own route handlers and middleware as needed:**
     As you further develop the application, you will likely need to add more route handlers in your `routes` directory and potentially implement custom middleware in your `app.js` or separate middleware files to handle specific application logic.
+
+
+## Screenshots
+
+![Homepage](public/images/Homepage.png)
+
+![About](public/images/About.png)
+
+![Events](public/images/Events.png)
+
+![Contact](public/images/Contact.png)
