@@ -1,31 +1,11 @@
-const events = require('../Data/Events');
-const team = require('../data/team');
-const submissions = require('../data/contactSubmissions');
- 
-router.get('/events', (req, res) => {
-    res.render('events', { events });
-});
-router.get('/team', (req, res) => {
-    res.render('team', { team });
-});
-router.get('/submissions', (req, res) => {
-    res.render('submissions', { submissions });
-});
+const express = require('express');
+const router = express.Router();
 
-// In-memory data storage
+const events = require('../data/events');
+const team = require('../data/team');
+
+// In-memory message storage
 const messages = [];
-const team = [
-  { name: 'Johannes Theunissen', role: 'Team Lead', bio: 'Coordinates tasks and ensures smooth workflow.' },
-  { name: 'Matthew Smith', role: 'Frontend Developer', bio: 'Builds clean, responsive UI with EJS and CSS.' },
-  { name: 'Johannes Theunissen', role: 'Backend Developer', bio: 'Handles Express routing and server logic.' },
-  { name: 'Kamogelo Sefadi', role: 'Data Manager', bio: 'Manages arrays and handles dynamic rendering.' },
-  { name: 'Sandhyaa Budhu', role: 'Documentation Manager', bio: 'Prepares project documentation and README.' }
-];
-const events = [
-  { title: 'Neighborhood Clean-Up', date: '2025-05-20', location: 'Community Park', image: '/images/cleanup.jpg' },
-  { title: 'Food Drive', date: '2025-06-05', location: 'Town Hall', image: '/images/fooddrive.jpg' },
-  { title: 'Tech Workshop', date: '2025-06-15', location: 'Library Conference Room', image: '/images/workshop.jpg' }
-];
 
 // Middleware to log requests
 router.use((req, res, next) => {
@@ -47,6 +27,11 @@ router.get('/about', (req, res) => {
 // Events route
 router.get('/events', (req, res) => {
   res.render('pages/events', { events });
+});
+
+// Team route
+router.get('/team', (req, res) => {
+  res.render('team', { team });
 });
 
 // Contact GET route
